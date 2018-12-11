@@ -32,6 +32,41 @@ public class User {
         autos.add(auto);
     }
 
+    public void removeAuto(Auto auto){
+        autos.remove(auto);
+    }
 
+    public long getId(){
+        return this.id;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setAge(int age){
+        this.age = age;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+
+    public void setAutos(List<Auto> autos){
+        this.autos = autos;
+    }
+
+    public List<Auto> getAutos(){
+        return this.autos;
+    }
+
+    @Override
+    public String toString(){
+        return "User{id="+this.id+", name="+this.name+", age="+age+"}";
+    }
 
 }
