@@ -14,15 +14,22 @@ public class UserDAOImpl implements UserDAO {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
 
-    public void saveUsed(User user) {
+    public void saveUser(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.save(user);
-        transaction.commit();
-        session.close();
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.save(user);
+            transaction.commit();
+        }catch (Exception e){
+
+        }finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 
-    public void ubdateUser(User user) {
+    public void updateUser(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
         session.update(user);
@@ -43,6 +50,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public List<User> findAll() {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From users").list();
+
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From User").list();
     }
 }

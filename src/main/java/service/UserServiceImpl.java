@@ -14,11 +14,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public void saveUser(User user) {
-        userDAO.saveUsed(user);
+        userDAO.saveUser(user);
     }
 
     public void updateUser(User user) {
-        userDAO.ubdateUser(user);
+        userDAO.updateUser(user);
     }
 
     public void deleteUser(User user) {

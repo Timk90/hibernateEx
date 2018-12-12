@@ -11,15 +11,17 @@ public class Main {
         UserService userService = new UserServiceImpl();
         User user = new User("Masha",26);
         userService.saveUser(user);
-        Auto ferrari = new Auto("Ferrari", "red");
-        ferrari.setUser(user);
-        user.addAuto(ferrari);
-        Auto ford = new Auto("Ford", "black");
-        ford.setUser(user);
-        user.addAuto(ford);
-        userService.updateUser(user);
+        //Auto ferrari = new Auto("Ferrari", "red");
+        //ferrari.setUser(user);
+        //user.addAuto(ferrari);
+        //Auto ford = new Auto("Ford", "black");
+        //ford.setUser(user);
+        //user.addAuto(ford);
+        //userService.updateUser(user);
 
-        System.out.println(userService.findUserById(1));
+        System.out.println(userService.findUserById(4));
+        System.out.println(userService.findAll());
+
 
     }
 }
